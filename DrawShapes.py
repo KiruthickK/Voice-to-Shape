@@ -1,6 +1,7 @@
 # Python program to demonstrate
 # circle drawing  
 import turtle
+from turtle import *
 t = turtle.Turtle()
 # Initializing the turtle
 def BendingWorks():
@@ -17,7 +18,31 @@ def TangentCircle():
         t.circle(r * i)
 def ClearDrawings():
     t.clear()
-def Rectangle():
+    # clear()
+def Square():
     # tod
-    BendingWorks()
+    for i in range(4):
+        t.forward(50)
+        t.right(90)
+def StraightLine(distance, direction):
+    if(direction == "right"):
+        t.right(90)
+        t.forward(distance)
+    if(direction == "left"):
+        t.left(90)
+        t.forward(distance)
+    if(direction == "backward"):
+        t.backward(90)
+        t.forward(distance)
+    if(direction == "forward"):
+        t.forward(distance)
 
+def TurtleStar():
+    # t.color('red', 'yellow')
+    # t.begin_fill()
+    # i = 0
+    for i in range(0,35):
+        t.forward(200)
+        t.left(170)
+    # end_fill()
+# TurtleStar()
