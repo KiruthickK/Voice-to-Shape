@@ -1,0 +1,5 @@
+done = ["done","stop drawing"]
+circle = ["circle"]
+clear = ["clear"]
+tangentCircle = ["draw a tangent circle","tangent circle"]
+rectange = ["rectangle"]
