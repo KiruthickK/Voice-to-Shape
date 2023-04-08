@@ -46,3 +46,16 @@ def TurtleStar():
         t.left(170)
     # end_fill()
 # TurtleStar()
+def ChangeDirection(direction):
+    if(direction == "right"):
+        t.right(90)
+    if(direction == "left"):
+        t.left(90)
+    if(direction == "backward"):
+        t.backward(90)
+    # if(direction == "forward"):
+    #     t.forward(10)
+# TangentCircle()
+# ChangeDirection("right")
+# TangentCircle()
+

@@ -1,6 +1,8 @@
 import VoiceRecognition as VR
 import DrawShapes as DS
 import SpeechCommandDatasets as SCMD
+import VoiceOutput as VC
+VC.speech("Say a shape to draw. Say Clear to clear the screen. Say done to exit the program")
 while(True):
     text = VR.SpeechToText()
     if(text is None):
@@ -18,11 +20,23 @@ while(True):
         DS.Square()
     elif(text in SCMD.clear):
         DS.ClearDrawings()
+    elif(text in SCMD.directionChange):
+        VC.speech("Tell me the directionm to change")
+        while(True):
+            text = VR.SpeechToText()
+            if(text is None):
+                continue
+            if(text in SCMD.Direction):
+                DS.ChangeDirection(text)
+                VC.speech("Direction changed")
+                break
+            else:
+                VC.speech("please provide me the valid direction")
     elif(text in SCMD.StraightLine):
         direction = ""
         distance = 0
+        VC.speech("Tell me the direction")
         while(True):
-            print("Tell the direction")
             text = VR.SpeechToText()
             if(text is None):
                 continue
@@ -30,9 +44,9 @@ while(True):
                 direction = text
                 break
             else:
-                print("please provide the direction")
+                VC.speech("please provide me the valid direction")
         while(True):
-            print("Tell the distance")
+            VC.speech("Tell the distance")
             text = VR.SpeechToText()
             if text is None:
                 continue
@@ -40,7 +54,7 @@ while(True):
                 distance = int(text)
                 break
             else:
-                print("Please provide a valid integer as distance")
+                VC.speech("Please provide a valid integer as distance")
         DS.StraightLine(distance,direction)
     else:
-        print("Simply waste, nothing received!")
+        VC.speech("Simply waste, nothing worthy received!, i mean command")
