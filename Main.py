@@ -20,6 +20,8 @@ while(True):
         DS.Square()
     elif(text in SCMD.clear):
         DS.ClearDrawings()
+    elif(text in SCMD.Indianflag):
+        DS.IndianFlag()
     elif(text in SCMD.directionChange):
         VC.speech("Tell me the directionm to change")
         while(True):
